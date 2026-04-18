@@ -116,7 +116,7 @@ body {
   width: 100%;
   max-width: 760px;
   text-align: center;
-  padding: 34px 20px 30px;
+  padding: 34px 20px 34px;
   background: linear-gradient(180deg, rgba(16, 22, 38, 0.84), rgba(8, 12, 22, 0.78));
   border: 1px solid var(--line);
   border-radius: 30px;
@@ -149,17 +149,14 @@ body {
   margin-bottom: 18px;
 }
 
-h1 {
-  margin: 0;
-  font-size: clamp(2.55rem, 11vw, 4.5rem);
-  line-height: 1.02;
-  letter-spacing: -0.05em;
-}
+/* =========================
+   Logo as main visual
+========================= */
 
 .logo-wrap {
   position: relative;
-  width: min(220px, 56vw);
-  margin: 28px auto 0;
+  width: min(270px, 68vw);
+  margin: 0 auto;
   z-index: 2;
 }
 
@@ -182,11 +179,11 @@ h1 {
 }
 
 /* =========================
-   Meta lines under logo
+   Meta panel attached to logo
 ========================= */
 
 .meta-panel {
-  width: min(220px, 56vw);
+  width: min(270px, 68vw);
   margin: -6px auto 0;
   padding: 14px 16px 16px;
   text-align: left;
@@ -202,7 +199,7 @@ h1 {
 }
 
 .meta-line {
-  font-size: 0.94rem;
+  font-size: 0.95rem;
   font-weight: 500;
   line-height: 1.55;
   color: rgba(255,255,255,0.84);
@@ -213,11 +210,29 @@ h1 {
 }
 
 /* =========================
+   Title + invite copy
+========================= */
+
+.hero-title {
+  margin: 26px 0 0;
+  font-size: clamp(2rem, 8vw, 3.35rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.invite-copy {
+  margin: 14px 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.54);
+}
+
+/* =========================
    CTA
 ========================= */
 
 .cta-row {
-  margin-top: 28px;
+  margin-top: 24px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -228,8 +243,8 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: min(220px, 56vw);
-  min-height: 54px;
+  width: min(270px, 68vw);
+  min-height: 56px;
   padding: 0 18px;
   text-decoration: none;
   color: #070b14;
@@ -258,7 +273,7 @@ h1 {
   }
 
   .hero-card {
-    padding: 28px 16px 26px;
+    padding: 28px 16px 28px;
     border-radius: 24px;
   }
 
@@ -267,30 +282,35 @@ h1 {
     font-size: 11px;
   }
 
-  h1 {
-    font-size: clamp(2.25rem, 12vw, 3.8rem);
-  }
-
   .logo-wrap {
-  width: min(200px, 58vw);
-  margin-top: 24px;
+    width: min(230px, 64vw);
   }
 
   .meta-panel {
-  width: min(200px, 58vw);
-  margin-top: -6px;
-  padding: 13px 14px 15px;
+    width: min(230px, 64vw);
+    margin-top: -6px;
+    padding: 13px 14px 15px;
   }
 
   .meta-line {
-  font-size: 0.9rem;
-  line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .hero-title {
+    margin-top: 22px;
+    font-size: clamp(1.85rem, 9vw, 3rem);
+  }
+
+  .invite-copy {
+    margin-top: 12px;
+    font-size: 0.95rem;
   }
 
   .join-btn {
-  width: min(200px, 58vw);
-  min-height: 52px;
-  font-size: 0.98rem;
-  border-radius: 15px;
+    width: min(230px, 64vw);
+    min-height: 52px;
+    font-size: 0.98rem;
+    border-radius: 15px;
   }
 }
