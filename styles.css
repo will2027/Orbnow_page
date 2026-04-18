@@ -214,10 +214,12 @@ body {
 ========================= */
 
 .hero-title {
-  margin: 26px 0 0;
-  font-size: clamp(2rem, 8vw, 3.35rem);
-  line-height: 1.05;
-  letter-spacing: -0.045em;
+  width: min(270px, 68vw);
+  margin: 24px auto 0;
+  font-size: clamp(1.55rem, 6vw, 2.35rem);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
 }
 
 .invite-copy {
@@ -297,11 +299,13 @@ body {
     line-height: 1.5;
   }
 
-  .hero-title {
-    margin-top: 22px;
-    font-size: clamp(1.85rem, 9vw, 3rem);
-  }
-
+ .hero-title {
+  width: min(230px, 64vw);
+  margin: 20px auto 0;
+  font-size: clamp(1.45rem, 7vw, 2.1rem);
+  font-weight: 650;
+  line-height: 1.08;
+}
   .invite-copy {
     margin-top: 12px;
     font-size: 0.95rem;
