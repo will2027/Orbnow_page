@@ -228,25 +228,24 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 320px;
-  min-height: 56px;
-  padding: 0 24px;
+  width: min(220px, 56vw);
+  min-height: 54px;
+  padding: 0 18px;
   text-decoration: none;
-  color: var(--text);
-  font-size: 1.05rem;
+  color: #070b14;
+  font-size: 1rem;
   font-weight: 700;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  background: #f5f8ff;
+  border: 1px solid rgba(255,255,255,0.85);
   box-shadow: 0 12px 28px rgba(0,0,0,0.22);
   transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
 }
 
 .join-btn:hover {
   transform: translateY(-2px);
-  background: rgba(255,255,255,0.11);
-  border-color: rgba(255,255,255,0.18);
+  background: #ffffff;
+  border-color: #ffffff;
 }
 
 /* =========================
@@ -288,19 +287,10 @@ h1 {
   line-height: 1.5;
   }
 
-  .meta-lines {
-    margin-top: 16px;
-    gap: 5px;
-  }
-
-  .meta-lines span {
-    font-size: 0.92rem;
-  }
-
   .join-btn {
-    max-width: 100%;
-    min-height: 54px;
-    font-size: 1rem;
-    border-radius: 16px;
+  width: min(200px, 58vw);
+  min-height: 52px;
+  font-size: 0.98rem;
+  border-radius: 15px;
   }
 }
