@@ -1,14 +1,7 @@
 :root {
   --bg: #070b14;
-  --bg-2: #0a1020;
   --text: #f5f8ff;
-  --muted: rgba(245, 248, 255, 0.72);
   --line: rgba(255, 255, 255, 0.08);
-  --card: rgba(9, 13, 24, 0.72);
-  --card-2: rgba(16, 22, 38, 0.58);
-  --blue: #2f65ff;
-  --blue-soft: #62a2ff;
-  --green: #84e85f;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
 }
 
@@ -20,14 +13,20 @@ html,
 body {
   margin: 0;
   min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
 }
 
 body {
-  overflow-x: hidden;
+  position: relative;
 }
+
+/* =========================
+   Background
+========================= */
 
 .bg-gradient,
 .bg-grid,
@@ -74,7 +73,7 @@ body {
   inset: 10% 10% auto auto;
   width: 300px;
   height: 300px;
-  background: rgba(47, 101, 255, 0.2);
+  background: rgba(47, 101, 255, 0.20);
 }
 
 .orb-c {
@@ -101,6 +100,10 @@ body {
 .node-c { inset: auto auto 16% 24%; }
 .node-d { inset: auto 14% 20% auto; }
 
+/* =========================
+   Layout
+========================= */
+
 .page-shell {
   width: 100%;
   min-height: 100vh;
@@ -113,9 +116,8 @@ body {
   width: 100%;
   max-width: 760px;
   text-align: center;
-  padding: 36px 22px 28px;
-  background:
-    linear-gradient(180deg, rgba(16, 22, 38, 0.84), rgba(8, 12, 22, 0.78));
+  padding: 34px 20px 28px;
+  background: linear-gradient(180deg, rgba(16, 22, 38, 0.84), rgba(8, 12, 22, 0.78));
   border: 1px solid var(--line);
   border-radius: 30px;
   box-shadow: var(--shadow);
@@ -144,12 +146,12 @@ body {
   font-weight: 700;
   letter-spacing: 0.28em;
   color: rgba(255,255,255,0.64);
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .logo-wrap {
   position: relative;
-  width: min(240px, 44vw);
+  width: min(230px, 58vw);
   margin: 0 auto 24px;
 }
 
@@ -172,16 +174,20 @@ body {
 }
 
 h1 {
-  margin: 0 0 10px;
-  font-size: clamp(2.6rem, 11vw, 4.5rem);
+  margin: 0;
+  font-size: clamp(2.55rem, 11vw, 4.4rem);
   line-height: 1.02;
   letter-spacing: -0.05em;
 }
 
+/* =========================
+   Features
+========================= */
+
 .feature-row {
   width: 100%;
-  max-width: 420px;
-  margin: 20px auto 0;
+  max-width: 440px;
+  margin: 22px auto 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
@@ -193,11 +199,11 @@ h1 {
   justify-content: center;
   min-height: 50px;
   padding: 12px 14px;
+  text-align: center;
   font-size: 0.95rem;
   font-weight: 500;
-  text-align: center;
   color: rgba(255,255,255,0.88);
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.10);
   border-radius: 999px;
   box-shadow:
@@ -211,10 +217,16 @@ h1 {
   justify-self: center;
 }
 
+/* =========================
+   CTA
+========================= */
+
 .cta-row {
   margin-top: 30px;
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 3;
 }
 
 .app-store-btn {
@@ -224,7 +236,7 @@ h1 {
   gap: 16px;
   width: 100%;
   max-width: 420px;
-  padding: 18px 20px;
+  padding: 16px 20px;
   text-decoration: none;
   color: var(--text);
   border-radius: 20px;
@@ -232,10 +244,6 @@ h1 {
   border: 1px solid rgba(255,255,255,0.12);
   box-shadow: 0 12px 28px rgba(0,0,0,0.22);
   transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
-}
-
-.cta-row,
-.app-store-btn {
   position: relative;
   z-index: 3;
 }
@@ -243,12 +251,13 @@ h1 {
 .app-store-btn:hover {
   transform: translateY(-2px);
   background: rgba(255,255,255,0.09);
-  border-color: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.20);
 }
 
 .apple-icon {
   font-size: 2rem;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 .btn-copy {
@@ -259,6 +268,11 @@ h1 {
   text-align: left;
   line-height: 1.05;
   flex-shrink: 0;
+}
+
+.btn-copy small,
+.btn-copy strong {
+  white-space: nowrap;
 }
 
 .btn-copy small {
@@ -272,18 +286,17 @@ h1 {
   font-weight: 700;
 }
 
-.btn-copy small,
-.btn-copy strong {
-  white-space: nowrap;
-}
+/* =========================
+   Mobile
+========================= */
 
 @media (max-width: 640px) {
-  html, body {
-    overflow-x: hidden;
+  .page-shell {
+    padding: 20px 12px;
   }
 
   .hero-card {
-    padding: 28px 18px 24px;
+    padding: 28px 16px 24px;
     border-radius: 24px;
   }
 
@@ -298,12 +311,19 @@ h1 {
   }
 
   h1 {
-    font-size: clamp(2.4rem, 12vw, 3.8rem);
+    font-size: clamp(2.25rem, 12vw, 3.7rem);
   }
 
   .feature-row {
-    max-width: 340px;
+    max-width: 320px;
+    grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .feature-row span:last-child {
+    grid-column: auto;
+    max-width: none;
+    justify-self: stretch;
   }
 
   .feature-row span {
@@ -314,7 +334,8 @@ h1 {
 
   .app-store-btn {
     max-width: 100%;
-    padding: 16px 18px;
+    padding: 15px 16px;
+    border-radius: 18px;
   }
 
   .apple-icon {
@@ -322,10 +343,10 @@ h1 {
   }
 
   .btn-copy small {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
   }
 
   .btn-copy strong {
-    font-size: 1.15rem;
+    font-size: 1.12rem;
   }
 }
