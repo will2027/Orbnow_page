@@ -217,7 +217,7 @@ body {
   width: min(270px, 68vw);
   margin: 24px auto 0;
   font-size: clamp(1.55rem, 6vw, 2.35rem);
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.035em;
 }
@@ -303,7 +303,7 @@ body {
   width: min(230px, 64vw);
   margin: 20px auto 0;
   font-size: clamp(1.45rem, 7vw, 2.1rem);
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1.08;
 }
   .invite-copy {
