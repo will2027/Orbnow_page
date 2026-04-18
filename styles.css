@@ -199,6 +199,9 @@ body {
 }
 
 .meta-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 0.95rem;
   font-weight: 500;
   line-height: 1.55;
@@ -207,6 +210,13 @@ body {
 
 .meta-line + .meta-line {
   margin-top: 6px;
+}
+
+.meta-icon {
+  width: 20px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 1rem;
 }
 
 /* =========================
@@ -295,8 +305,13 @@ body {
   }
 
   .meta-line {
+    gap: 9px;
     font-size: 0.9rem;
-    line-height: 1.5;
+  }
+
+  .meta-icon {
+    width: 18px;
+    font-size: 0.95rem;
   }
 
  .hero-title {
