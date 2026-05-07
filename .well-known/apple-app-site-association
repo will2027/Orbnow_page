@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "AAW8M2C57K.com.nowproject.earth"
+        ],
+        "components": [
+          {
+            "/": "/invite/*",
+            "comment": "Orbnow invite links"
+          }
+        ]
+      }
+    ]
+  }
+}
