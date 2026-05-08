@@ -65,14 +65,31 @@
   const appStoreUrl = "https://apps.apple.com/us/app/orbnow/id6761145772";
   const openBtn = document.getElementById("openOrbnowBtn");
 
+  function inviteCodeFromPath() {
+    const parts = window.location.pathname.split("/").filter(Boolean);
+
+    if (parts.length >= 2 && parts[0] === "invite") {
+      return parts[1];
+    }
+
+    return null;
+  }
+
   if (openBtn) {
     openBtn.addEventListener("click", function (event) {
       event.preventDefault();
 
-      const inviteUrl = window.location.href;
+      const code = inviteCodeFromPath();
+
+      if (!code) {
+        window.location.href = appStoreUrl;
+        return;
+      }
+
+      const appUrl = "orbnow://invite/" + encodeURIComponent(code);
       const startedAt = Date.now();
 
-      window.location.href = inviteUrl;
+      window.location.href = appUrl;
 
       setTimeout(function () {
         const elapsed = Date.now() - startedAt;
