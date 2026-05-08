@@ -48,14 +48,41 @@
       <div class="cta-row">
         <a
           class="join-btn"
-          href="https://apps.apple.com/us/app/orbnow/id6761145772"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#"
+          id="openOrbnowBtn"
         >
-          Join Orbnow
+          Open Orbnow
         </a>
       </div>
+
+      <p class="fallback-copy">
+        If Orbnow doesn’t open, you’ll be taken to the App Store.
+      </p>
     </section>
   </main>
+
+  <script>
+  const appStoreUrl = "https://apps.apple.com/us/app/orbnow/id6761145772";
+  const openBtn = document.getElementById("openOrbnowBtn");
+
+  if (openBtn) {
+    openBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const inviteUrl = window.location.href;
+      const startedAt = Date.now();
+
+      window.location.href = inviteUrl;
+
+      setTimeout(function () {
+        const elapsed = Date.now() - startedAt;
+
+        if (elapsed < 1800) {
+          window.location.href = appStoreUrl;
+        }
+      }, 1200);
+    });
+  }
+</script>
 </body>
 </html>
