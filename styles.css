@@ -239,6 +239,14 @@ body {
   color: rgba(255,255,255,0.54);
 }
 
+.fallback-copy {
+  width: min(270px, 68vw);
+  margin: 10px auto 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.38);
+}
+
 /* =========================
    CTA
 ========================= */
@@ -324,6 +332,11 @@ body {
   .invite-copy {
     margin-top: 12px;
     font-size: 0.95rem;
+  }
+
+  .fallback-copy {
+    width: min(230px, 64vw);
+    font-size: 0.76rem;
   }
 
   .join-btn {
