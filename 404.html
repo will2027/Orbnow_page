@@ -87,17 +87,29 @@
       }
 
       const appUrl = "orbnow://invite/" + encodeURIComponent(code);
-      const startedAt = Date.now();
+
+      let didLeavePage = false;
+
+      const markLeftPage = function () {
+        didLeavePage = true;
+      };
+
+      window.addEventListener("pagehide", markLeftPage, { once: true });
+      window.addEventListener("blur", markLeftPage, { once: true });
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          didLeavePage = true;
+        }
+      }, { once: true });
 
       window.location.href = appUrl;
 
       setTimeout(function () {
-        const elapsed = Date.now() - startedAt;
-
-        if (elapsed < 1800) {
+        if (!didLeavePage && !document.hidden) {
           window.location.href = appStoreUrl;
         }
-      }, 1200);
+      }, 3000);
     });
   }
 </script>
